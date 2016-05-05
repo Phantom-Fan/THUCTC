@@ -11,11 +11,9 @@
 BEGIN_THUNLP_NAMESPACE
 
     class BigramWordSegment : public WordSegment {
-    private:
-        std::vector<std::wstring> segs;
     public:
-        BigramWordSegment() {}
-        ~BigramWordSegment(){ segs.clear(); }
+        BigramWordSegment(){}
+        ~BigramWordSegment(){ }
         bool outputPosTag() { return false; }
         std::vector<std::string> segment(const std::string& text);
     };

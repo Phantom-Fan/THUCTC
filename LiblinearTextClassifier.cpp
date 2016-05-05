@@ -7,6 +7,7 @@
 #include "liblinear-2.1/linear.h"
 #include <iostream>
 #include <algorithm>
+#include <cstdio>
 using namespace std;
 using namespace thunlp;
 
@@ -65,14 +66,14 @@ BEGIN_THUNLP_NAMESPACE
         try{
             if ( exists_test(lexiconFilePath) ) {
                 lexicon->loadFromFile(lexiconFilePath);
-                cout << "lexicon exists!\n";
+                printf("lexicon exists!\n");
             } else {
                 return false;
             }
 
             if ( exists_test(modelFilePath) ) {
                 this->lmodel = load_model(modelFilePath.c_str());
-                cout << "model exists!\n";
+                printf("model exists!\n");
             } else {
                 return false;
             }
@@ -119,3 +120,10 @@ BEGIN_THUNLP_NAMESPACE
     }
 
 END_THUNLP_NAMESPACE
+//gzrd_Lib_CPP_Version_ID--start
+#ifndef GZRD_SVN_ATTR
+#define GZRD_SVN_ATTR "0"
+#endif
+static char gzrd_Lib_CPP_Version_ID[] __attribute__((used))="$HeadURL$ $Id$ " GZRD_SVN_ATTR "__file__";
+// gzrd_Lib_CPP_Version_ID--end
+

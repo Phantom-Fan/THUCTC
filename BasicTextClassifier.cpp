@@ -5,6 +5,7 @@
 #include "BasicTextClassifier.h"
 #include <fstream>
 #include <iostream>
+#include <cstdio>
 using namespace thunlp;
 using namespace std;
 
@@ -34,12 +35,12 @@ BEGIN_THUNLP_NAMESPACE
         }
 
         categoryToInt.clear();
-        cout << "--------------------------------\nCategory List:\n";
+        printf("--------------------------------\nCategory List:\n");
         for (int i = 0; i < categoryList.size(); ++i) {
             categoryToInt.insert(map<string, int>::value_type(categoryList.at(i), i));
-            cout << i << "\t\t" << categoryList.at(i) << endl;
+            printf("%d\t\t%s\n", i, categoryList.at(i).c_str());
         }
-        cout << "--------------------------------\n";
+        printf("--------------------------------\n");
 
         fin.close();
         return true;
@@ -53,3 +54,10 @@ BEGIN_THUNLP_NAMESPACE
     }
 
 END_THUNLP_NAMESPACE
+//gzrd_Lib_CPP_Version_ID--start
+#ifndef GZRD_SVN_ATTR
+#define GZRD_SVN_ATTR "0"
+#endif
+static char gzrd_Lib_CPP_Version_ID[] __attribute__((used))="$HeadURL$ $Id$ " GZRD_SVN_ATTR "__file__";
+// gzrd_Lib_CPP_Version_ID--end
+

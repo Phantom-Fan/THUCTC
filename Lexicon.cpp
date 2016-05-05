@@ -4,6 +4,7 @@
 
 #include "Lexicon.h"
 #include <iostream>
+#include <cstdio>
 using namespace std;
 using namespace thunlp;
 
@@ -36,11 +37,11 @@ BEGIN_THUNLP_NAMESPACE
         return t;
     }
 
-    std::string Lexicon::Word::toString() {
-        string temp(name);
-        substrReplace(temp, ":", COLON_REPLACER);
-        return to_string(id) + ":" + temp + ":" + to_string(tf) + ":" + to_string(df);
-    }
+//    std::string Lexicon::Word::toString() {
+//        string temp(name);
+//        substrReplace(temp, ":", COLON_REPLACER);
+//        return to_string(id) + ":" + temp + ":" + to_string(tf) + ":" + to_string(df);
+//    }
 
     Lexicon::Lexicon() {
         idHash.clear();
@@ -119,7 +120,7 @@ BEGIN_THUNLP_NAMESPACE
 
     bool Lexicon::loadFromFile(const std::string& filename) {
         if (exists_test(filename)){
-            cout << filename << endl;
+            printf("%s\n", filename.c_str());
             ifstream fin(filename);
             return loadFromInputStream(fin);
         } else {
@@ -135,7 +136,7 @@ BEGIN_THUNLP_NAMESPACE
             string termString;
             getline(input, termString);
             numDocs = atoi(termString.c_str());
-            cout << numDocs << " documents in total.\n";
+            printf("%lld documents in total.\n", numDocs);
             while (getline(input, termString)) {
                 Lexicon::Word* t = buildWord(termString);
                 if (t != nullptr) {
@@ -214,3 +215,11 @@ BEGIN_THUNLP_NAMESPACE
     }
 
 END_THUNLP_NAMESPACE
+
+//gzrd_Lib_CPP_Version_ID--start
+#ifndef GZRD_SVN_ATTR
+#define GZRD_SVN_ATTR "0"
+#endif
+static char gzrd_Lib_CPP_Version_ID[] __attribute__((used))="$HeadURL$ $Id$ " GZRD_SVN_ATTR "__file__";
+// gzrd_Lib_CPP_Version_ID--end
+

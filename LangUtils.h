@@ -10,7 +10,7 @@ BEGIN_THUNLP_NAMESPACE
 
     class LangUtils {
     public:
-        LangUtils(){}
+        LangUtils();
         ~LangUtils(){}
         static bool isSpaceChar(wchar_t character);
         static bool isChinese(wchar_t character);
