@@ -14,8 +14,7 @@ cc_library(
         './liblinear-2.1/blas/dnrm2.c',
         './liblinear-2.1/blas/dscal.c',
 	],
-	export_incs = ['.','./liblinear-2.1','./liblinear-2.1/blas'],
-	deps = ['//mm3rd/boost:boost',],
+	export_incs = ['.','./liblinear-2.1','./liblinear-2.1/blas','./utf8'],
 	extra_cppflags = [
         '-Wall',
         '-std=c++11',

@@ -7,7 +7,7 @@
 using namespace std;
 using namespace thunlp;
 
-#define THREADS_NUM 5
+#define THREADS_NUM 10
 
 struct Parameter{
     string text;
